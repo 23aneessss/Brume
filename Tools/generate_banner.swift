@@ -49,11 +49,11 @@ ctx.restoreGState()
 
 // MARK: - Helper to draw centered CoreText
 func drawText(_ string: String, font: CTFont, color c: CGColor, x: CGFloat, y: CGFloat, centered: Bool = false) {
-    let attrs: [CFString: Any] = [
-        kCTFontAttributeName: font,
-        kCTForegroundColorAttributeName: c
+    let attrs: [NSAttributedString.Key: Any] = [
+        NSAttributedString.Key(kCTFontAttributeName as String): font,
+        NSAttributedString.Key(kCTForegroundColorAttributeName as String): c
     ]
-    let attr = NSAttributedString(string: string, attributes: attrs as? [NSAttributedString.Key: Any] ?? [:])
+    let attr = NSAttributedString(string: string, attributes: attrs)
     let line = CTLineCreateWithAttributedString(attr)
     var startX = x
     if centered {
