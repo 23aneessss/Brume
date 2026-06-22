@@ -7,23 +7,140 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0237CDA9A6871B62CB459E3F /* CoachOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E0C4EA8ADB9846A39B66BA /* CoachOverlay.swift */; };
+		03AD903210CB295F3155892B /* PDFExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986179BA9FFAFC04371E0604 /* PDFExporter.swift */; };
+		04990105D5540EB377705540 /* LockScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DD08A6001DA0A4AD9D646B /* LockScreenView.swift */; };
+		066A41B161F6BD8D79DE6D77 /* HandDrawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC3435056B3D295A2E1A673 /* HandDrawn.swift */; };
+		07C1F19EFA8162F19A05E19E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47B60F723CC9A61BB8E338C /* HomeView.swift */; };
+		0A8AEC341E7A2FADE7BFAD7D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C009E064304EE97166C40C /* SettingsView.swift */; };
 		16C688EE469A7693A294316D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F26A88CEBB23F3954D84E3C4 /* Assets.xcassets */; };
+		2911BC8BE8E1409E7FBD551A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3797884C9D60A9E3043D0D /* AppDelegate.swift */; };
+		2B793B35FF430D9ED283233A /* OnboardingIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54A9AD2817413189F628AC8 /* OnboardingIllustration.swift */; };
+		3CABCD498F3E84C20F96C67B /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DE5C7331D60EC4E57218EA /* AppSettings.swift */; };
+		4AEAA8224779E7C41A3BB8A9 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AB4DD12D8178E84B351162 /* NotificationManager.swift */; };
+		4B00830A0A4CB3AB204F14D0 /* EntryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942EBAFBD40930D95EABB22A /* EntryCard.swift */; };
+		539CFCCF73437DE9100B749C /* TextAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F38FEF58CC623DCF099911 /* TextAnnotation.swift */; };
+		5875E2EAD90040EDA10E6855 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1718731B91B029A48195F42C /* Entry.swift */; };
+		6207888686734DA891BD19C6 /* TextNodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB40274E582BA017245045 /* TextNodeView.swift */; };
+		6224C2FD55146C48DC4F0540 /* PencilCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31698209728061B6DCEC57D /* PencilCanvasView.swift */; };
+		6B65AB07BF97F05979F7686E /* CanvasEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B765588820121B8A5A84194 /* CanvasEditorView.swift */; };
+		6E332C75E408272970D224E3 /* CanvasTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2519EF8BCD6B531CD81C02 /* CanvasTool.swift */; };
+		90603F6251CA7B3980AFBA49 /* LockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13207319F532C783E3FFB9A1 /* LockManager.swift */; };
+		B66A7027DFE4D38F29BB6BF9 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F48ABE07C4A334C2AA2F0D9 /* Mood.swift */; };
+		C754956C1C69581313191F1A /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398679588804CBB80AB22D4 /* ShareSheet.swift */; };
+		D415D8E2066FC03A272223EB /* BrumeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543CFD714A5A3053F5B41B2C /* BrumeApp.swift */; };
+		E53A747558A0CC990D22C6DE /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6631A11BD656A69A00B99401 /* SplashView.swift */; };
+		EDCC0B4FA4A5F70EF5C3C475 /* BrumeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD91645F069184D53ED639BF /* BrumeTheme.swift */; };
+		FD9A9C13BFBD4337A3E6ACFE /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D69BCB1F3BB2ADE8F793AA2 /* OnboardingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02E0C4EA8ADB9846A39B66BA /* CoachOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachOverlay.swift; sourceTree = "<group>"; };
+		0398679588804CBB80AB22D4 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		0D69BCB1F3BB2ADE8F793AA2 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		0F48ABE07C4A334C2AA2F0D9 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
+		13207319F532C783E3FFB9A1 /* LockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockManager.swift; sourceTree = "<group>"; };
+		1718731B91B029A48195F42C /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		1B19D450C0A96A53348E966D /* Brume.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Brume.entitlements; sourceTree = "<group>"; };
+		4B765588820121B8A5A84194 /* CanvasEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasEditorView.swift; sourceTree = "<group>"; };
+		4E3797884C9D60A9E3043D0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		543CFD714A5A3053F5B41B2C /* BrumeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrumeApp.swift; sourceTree = "<group>"; };
 		565824E675A868C45BDEC8D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6631A11BD656A69A00B99401 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		68C009E064304EE97166C40C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		6E2519EF8BCD6B531CD81C02 /* CanvasTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasTool.swift; sourceTree = "<group>"; };
+		73F38FEF58CC623DCF099911 /* TextAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAnnotation.swift; sourceTree = "<group>"; };
+		942EBAFBD40930D95EABB22A /* EntryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCard.swift; sourceTree = "<group>"; };
+		96AB40274E582BA017245045 /* TextNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextNodeView.swift; sourceTree = "<group>"; };
+		97DD08A6001DA0A4AD9D646B /* LockScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenView.swift; sourceTree = "<group>"; };
+		986179BA9FFAFC04371E0604 /* PDFExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFExporter.swift; sourceTree = "<group>"; };
+		C31698209728061B6DCEC57D /* PencilCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilCanvasView.swift; sourceTree = "<group>"; };
+		CCC3435056B3D295A2E1A673 /* HandDrawn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandDrawn.swift; sourceTree = "<group>"; };
+		CD91645F069184D53ED639BF /* BrumeTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrumeTheme.swift; sourceTree = "<group>"; };
 		D02E0700BF67BAD55AE7AB50 /* Brume.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Brume.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7AB4DD12D8178E84B351162 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		F1DE5C7331D60EC4E57218EA /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		F26A88CEBB23F3954D84E3C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F47B60F723CC9A61BB8E338C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F54A9AD2817413189F628AC8 /* OnboardingIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingIllustration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		0714732270055A1BB182B39D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				942EBAFBD40930D95EABB22A /* EntryCard.swift */,
+				F47B60F723CC9A61BB8E338C /* HomeView.swift */,
+				97DD08A6001DA0A4AD9D646B /* LockScreenView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0ACB6F73D17F6487C10C249E /* Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				4B765588820121B8A5A84194 /* CanvasEditorView.swift */,
+				6E2519EF8BCD6B531CD81C02 /* CanvasTool.swift */,
+				02E0C4EA8ADB9846A39B66BA /* CoachOverlay.swift */,
+				C31698209728061B6DCEC57D /* PencilCanvasView.swift */,
+				0398679588804CBB80AB22D4 /* ShareSheet.swift */,
+				96AB40274E582BA017245045 /* TextNodeView.swift */,
+			);
+			path = Canvas;
+			sourceTree = "<group>";
+		};
+		13E6EDC4CB3FDDE79B4064A1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				68C009E064304EE97166C40C /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		47792D836DEFACBD1F0ECBA7 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				F54A9AD2817413189F628AC8 /* OnboardingIllustration.swift */,
+				0D69BCB1F3BB2ADE8F793AA2 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		54203073F9389684EFE687F4 /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				986179BA9FFAFC04371E0604 /* PDFExporter.swift */,
+			);
+			path = Export;
+			sourceTree = "<group>";
+		};
 		734227A1C8150492B6D612E3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				D02E0700BF67BAD55AE7AB50 /* Brume.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A15A50E60DC9C11EA41FAE22 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1DE5C7331D60EC4E57218EA /* AppSettings.swift */,
+				1718731B91B029A48195F42C /* Entry.swift */,
+				13207319F532C783E3FFB9A1 /* LockManager.swift */,
+				0F48ABE07C4A334C2AA2F0D9 /* Mood.swift */,
+				73F38FEF58CC623DCF099911 /* TextAnnotation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B72FA74720DB01097C9280A7 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				4E3797884C9D60A9E3043D0D /* AppDelegate.swift */,
+				E7AB4DD12D8178E84B351162 /* NotificationManager.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		B80667BC18C7A75BC2201686 = {
@@ -34,21 +151,57 @@
 			);
 			sourceTree = "<group>";
 		};
+		BA7EA4FF0B174ED01FF5660C /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				6631A11BD656A69A00B99401 /* SplashView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		D122F55801417FCC3D8D7F77 /* Brume */ = {
 			isa = PBXGroup;
 			children = (
 				F26A88CEBB23F3954D84E3C4 /* Assets.xcassets */,
 				1B19D450C0A96A53348E966D /* Brume.entitlements */,
 				565824E675A868C45BDEC8D7 /* Info.plist */,
+				D977AB08E3A6585DE9BF43B0 /* App */,
+				54203073F9389684EFE687F4 /* Export */,
+				A15A50E60DC9C11EA41FAE22 /* Models */,
+				B72FA74720DB01097C9280A7 /* Notifications */,
+				F8C79134294A3E1262FE9DA4 /* Theme */,
+				D60527D965E5D0B8F40105C8 /* Views */,
 			);
 			path = Brume;
 			sourceTree = "<group>";
 		};
-		"TEMP_7725BF33-75F2-4977-8C48-EEAA6CB6E77C" /* Views */ = {
+		D60527D965E5D0B8F40105C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0ACB6F73D17F6487C10C249E /* Canvas */,
+				0714732270055A1BB182B39D /* Home */,
+				47792D836DEFACBD1F0ECBA7 /* Onboarding */,
+				13E6EDC4CB3FDDE79B4064A1 /* Settings */,
+				BA7EA4FF0B174ED01FF5660C /* Splash */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D977AB08E3A6585DE9BF43B0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				543CFD714A5A3053F5B41B2C /* BrumeApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F8C79134294A3E1262FE9DA4 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				CD91645F069184D53ED639BF /* BrumeTheme.swift */,
+				CCC3435056B3D295A2E1A673 /* HandDrawn.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +271,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2911BC8BE8E1409E7FBD551A /* AppDelegate.swift in Sources */,
+				3CABCD498F3E84C20F96C67B /* AppSettings.swift in Sources */,
+				D415D8E2066FC03A272223EB /* BrumeApp.swift in Sources */,
+				EDCC0B4FA4A5F70EF5C3C475 /* BrumeTheme.swift in Sources */,
+				6B65AB07BF97F05979F7686E /* CanvasEditorView.swift in Sources */,
+				6E332C75E408272970D224E3 /* CanvasTool.swift in Sources */,
+				0237CDA9A6871B62CB459E3F /* CoachOverlay.swift in Sources */,
+				5875E2EAD90040EDA10E6855 /* Entry.swift in Sources */,
+				4B00830A0A4CB3AB204F14D0 /* EntryCard.swift in Sources */,
+				066A41B161F6BD8D79DE6D77 /* HandDrawn.swift in Sources */,
+				07C1F19EFA8162F19A05E19E /* HomeView.swift in Sources */,
+				90603F6251CA7B3980AFBA49 /* LockManager.swift in Sources */,
+				04990105D5540EB377705540 /* LockScreenView.swift in Sources */,
+				B66A7027DFE4D38F29BB6BF9 /* Mood.swift in Sources */,
+				4AEAA8224779E7C41A3BB8A9 /* NotificationManager.swift in Sources */,
+				2B793B35FF430D9ED283233A /* OnboardingIllustration.swift in Sources */,
+				FD9A9C13BFBD4337A3E6ACFE /* OnboardingView.swift in Sources */,
+				03AD903210CB295F3155892B /* PDFExporter.swift in Sources */,
+				6224C2FD55146C48DC4F0540 /* PencilCanvasView.swift in Sources */,
+				0A8AEC341E7A2FADE7BFAD7D /* SettingsView.swift in Sources */,
+				C754956C1C69581313191F1A /* ShareSheet.swift in Sources */,
+				E53A747558A0CC990D22C6DE /* SplashView.swift in Sources */,
+				539CFCCF73437DE9100B749C /* TextAnnotation.swift in Sources */,
+				6207888686734DA891BD19C6 /* TextNodeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

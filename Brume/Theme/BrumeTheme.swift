@@ -3,20 +3,22 @@ import SwiftUI
 enum BrumeTheme {
     // MARK: - Colors
     struct Colors {
-        // Light mode
-        static let background     = Color(hex: "#F7F3EC")
-        static let surface        = Color(hex: "#FDF9F3")
+        // Surfaces & text adapt between light/dark so the app stays legible in both.
+        static let background     = dyn(light: "#F7F3EC", dark: "#1B1D28")
+        static let surface        = dyn(light: "#FDF9F3", dark: "#262030")
+        static let warmBrown      = dyn(light: "#6B5B4E", dark: "#E6DCEF") // titles
+        static let softBrown      = dyn(light: "#A08070", dark: "#B6A6C9")
+        static let inkDark        = dyn(light: "#3D3530", dark: "#ECE8F2")
+        static let inkMedium      = dyn(light: "#6B5B4E", dark: "#C3BBD0")
+        static let inkLight       = dyn(light: "#9A8880", dark: "#8E869C")
+        static let paperLine      = dyn(light: "#E8DDD0", dark: "#39354A", lightAlpha: 0.6, darkAlpha: 0.7)
+        static let cardBorder     = dyn(light: "#E2D8CC", dark: "#3A3548")
+
+        // Brand accents — readable on both schemes, so kept constant.
         static let lavender       = Color(hex: "#9B8EC4")
         static let lavenderLight  = Color(hex: "#C8B8E8")
         static let sage           = Color(hex: "#8BA888")
         static let sageLight      = Color(hex: "#B5CEB3")
-        static let warmBrown      = Color(hex: "#6B5B4E")
-        static let softBrown      = Color(hex: "#A08070")
-        static let inkDark        = Color(hex: "#3D3530")
-        static let inkMedium      = Color(hex: "#6B5B4E")
-        static let inkLight       = Color(hex: "#9A8880")
-        static let paperLine      = Color(hex: "#E8DDD0").opacity(0.6)
-        static let cardBorder     = Color(hex: "#E2D8CC")
 
         // Mood colors
         static let moodHappy      = Color(hex: "#F4C542")
@@ -24,6 +26,15 @@ enum BrumeTheme {
         static let moodSad        = Color(hex: "#7BAFD4")
         static let moodEnergetic  = Color(hex: "#E88B5A")
         static let moodGrateful   = Color(hex: "#8BA888")
+    }
+
+    /// Builds a Color that resolves differently in light vs. dark mode.
+    static func dyn(light: String, dark: String, lightAlpha: CGFloat = 1, darkAlpha: CGFloat = 1) -> Color {
+        Color(UIColor { traits in
+            let hex = traits.userInterfaceStyle == .dark ? dark : light
+            let alpha = traits.userInterfaceStyle == .dark ? darkAlpha : lightAlpha
+            return UIColor(Color(hex: hex)).withAlphaComponent(alpha)
+        })
     }
 
     // MARK: - Fonts

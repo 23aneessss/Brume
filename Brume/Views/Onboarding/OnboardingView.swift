@@ -111,12 +111,15 @@ struct OnboardingPageView: View {
                     .font(BrumeTheme.Fonts.title(30))
                     .foregroundStyle(BrumeTheme.Colors.warmBrown)
                     .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(.horizontal, BrumeTheme.Spacing.md)
 
                 Text(page.body)
                     .font(BrumeTheme.Fonts.body(17))
                     .foregroundStyle(BrumeTheme.Colors.inkMedium)
                     .multilineTextAlignment(.center)
                     .lineSpacing(5)
+                    .fixedSize(horizontal: false, vertical: true)
                     .padding(.horizontal, BrumeTheme.Spacing.xl)
             }
             .opacity(appear ? 1 : 0)

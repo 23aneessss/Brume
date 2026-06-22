@@ -48,7 +48,7 @@ final class Entry {
             return (try? PKDrawing(data: data)) ?? PKDrawing()
         }
         set {
-            drawingData = try? newValue.dataRepresentation()
+            drawingData = newValue.dataRepresentation()
             updatedAt = Date()
         }
     }

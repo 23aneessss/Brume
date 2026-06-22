@@ -16,7 +16,7 @@ struct TextNodeView: View {
             TextField("", text: $annotation.text, axis: .vertical)
                 .focused($fieldFocused)
                 .font(.system(size: annotation.fontSize, weight: .regular, design: .serif))
-                .foregroundStyle(Color(hex: annotation.colorHex))
+                .foregroundStyle(InkColor.from(hex: annotation.colorHex).color)
                 .tint(BrumeTheme.Colors.lavender)
                 .multilineTextAlignment(.leading)
                 .frame(width: annotation.width, alignment: .topLeading)
@@ -56,6 +56,15 @@ struct TextNodeView: View {
         }
         .onChange(of: isFocused) { _, focused in
             fieldFocused = focused
+        }
+        .onAppear {
+            // @FocusState.onChange doesn't fire for the initial value, so a
+            // freshly-created (already-focused) note needs an explicit nudge.
+            if isFocused {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+                    fieldFocused = true
+                }
+            }
         }
         .onTapGesture {
             if isInteractive {

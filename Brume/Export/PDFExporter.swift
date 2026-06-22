@@ -3,6 +3,13 @@ import SwiftUI
 import PencilKit
 
 enum PDFExporter {
+    /// Exports always render on light "paper", regardless of the app's theme,
+    /// by resolving adaptive colors against a light trait collection.
+    private static let lightTraits = UITraitCollection(userInterfaceStyle: .light)
+    private static func paper(_ color: Color) -> UIColor {
+        UIColor(color).resolvedColor(with: lightTraits)
+    }
+
     /// Renders an entry (text annotations + drawing + header) into a single-page
     /// A4-ish PDF and returns a temporary file URL.
     static func export(entry: Entry) -> URL? {
@@ -22,7 +29,7 @@ enum PDFExporter {
                 let cg = ctx.cgContext
 
                 // Background
-                UIColor(BrumeTheme.Colors.surface).setFill()
+                paper(BrumeTheme.Colors.surface).setFill()
                 cg.fill(pageRect)
 
                 // Header
@@ -115,14 +122,14 @@ enum PDFExporter {
 
         let titleAttrs: [NSAttributedString.Key: Any] = [
             .font: UIFont(name: "Noteworthy-Bold", size: 26) ?? UIFont.boldSystemFont(ofSize: 26),
-            .foregroundColor: UIColor(BrumeTheme.Colors.warmBrown)
+            .foregroundColor: paper(BrumeTheme.Colors.warmBrown)
         ]
         let titleString = "\(moodEmoji) \(title)".trimmingCharacters(in: .whitespaces)
         titleString.draw(at: CGPoint(x: margin, y: margin), withAttributes: titleAttrs)
 
         let dateAttrs: [NSAttributedString.Key: Any] = [
             .font: UIFont(name: "Noteworthy-Light", size: 13) ?? UIFont.systemFont(ofSize: 13),
-            .foregroundColor: UIColor(BrumeTheme.Colors.inkLight)
+            .foregroundColor: paper(BrumeTheme.Colors.inkLight)
         ]
         dateString.draw(at: CGPoint(x: margin, y: margin + 36), withAttributes: dateAttrs)
 
@@ -130,7 +137,7 @@ enum PDFExporter {
         let path = UIBezierPath()
         path.move(to: CGPoint(x: margin, y: margin + 60))
         path.addLine(to: CGPoint(x: pageRect.width - margin, y: margin + 60))
-        UIColor(BrumeTheme.Colors.cardBorder).setStroke()
+        paper(BrumeTheme.Colors.cardBorder).setStroke()
         path.lineWidth = 1
         path.stroke()
     }
@@ -139,7 +146,7 @@ enum PDFExporter {
         let footer = "Made with Brume · breathe · write · draw"
         let attrs: [NSAttributedString.Key: Any] = [
             .font: UIFont(name: "Noteworthy-Light", size: 11) ?? UIFont.systemFont(ofSize: 11),
-            .foregroundColor: UIColor(BrumeTheme.Colors.inkLight)
+            .foregroundColor: paper(BrumeTheme.Colors.inkLight)
         ]
         let size = footer.size(withAttributes: attrs)
         footer.draw(

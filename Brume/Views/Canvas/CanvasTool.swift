@@ -55,7 +55,11 @@ enum InkColor: String, CaseIterable, Identifiable {
         }
     }
 
-    var color: Color { Color(hex: hex) }
+    /// Display color. The neutral "ink" adapts to light/dark so notes stay
+    /// legible in both; the accent colors read well on either scheme as-is.
+    var color: Color {
+        self == .ink ? BrumeTheme.Colors.inkDark : Color(hex: hex)
+    }
 
     static func from(hex: String) -> InkColor {
         allCases.first { $0.hex.lowercased() == hex.lowercased() } ?? .ink
