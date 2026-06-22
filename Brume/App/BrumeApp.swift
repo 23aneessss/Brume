@@ -3,8 +3,10 @@ import SwiftData
 
 @main
 struct BrumeApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @StateObject private var settings = AppSettings.shared
     @StateObject private var lockManager = LockManager()
+    @Environment(\.scenePhase) private var scenePhase
     @State private var showSplash = true
 
     let modelContainer: ModelContainer
@@ -58,5 +60,18 @@ struct BrumeApp: App {
             }
         }
         .modelContainer(modelContainer)
+        .onChange(of: scenePhase) { _, phase in
+            switch phase {
+            case .background:
+                // Re-lock when the app leaves the foreground.
+                if settings.isAppLocked { lockManager.lock() }
+            case .active:
+                if settings.isAppLocked && !lockManager.isUnlocked && !showSplash {
+                    lockManager.authenticate()
+                }
+            default:
+                break
+            }
+        }
     }
 }
