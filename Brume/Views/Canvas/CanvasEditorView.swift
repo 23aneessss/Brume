@@ -148,6 +148,11 @@ struct CanvasEditorView: View {
                 tool.mode = mode
                 focusedNodeID = nil
                 hideKeyboard()
+                // The neutral "ink" isn't offered for drawing in dark mode
+                // (it can't render reliably on dark paper), so move off it.
+                if mode == .draw, isDarkMode, tool.color == .ink {
+                    tool.color = .clay
+                }
             }
         } label: {
             HStack(spacing: 6) {
@@ -163,6 +168,18 @@ struct CanvasEditorView: View {
                 Capsule().fill(isSelected ? BrumeTheme.Colors.clay : .clear)
             )
         }
+    }
+
+    // The app's effective appearance, read reliably (a full-screen cover
+    // doesn't inherit the forced colour scheme).
+    private var isDarkMode: Bool {
+        AppSettings.shared.effectiveInterfaceStyle == .dark
+    }
+
+    // Colours offered for drawing. The neutral "ink" is dropped in dark mode —
+    // it can't be drawn legibly on dark paper, so it's simply not selectable.
+    private var drawingColors: [InkColor] {
+        isDarkMode ? InkColor.allCases.filter { $0 != .ink } : InkColor.allCases
     }
 
     // MARK: - Draw options (pens + colors + width)
@@ -186,7 +203,7 @@ struct CanvasEditorView: View {
 
             if tool.pen != .eraser {
                 HStack(spacing: BrumeTheme.Spacing.md) {
-                    ForEach(InkColor.allCases) { ink in
+                    ForEach(drawingColors) { ink in
                         colorDot(ink)
                     }
                 }
