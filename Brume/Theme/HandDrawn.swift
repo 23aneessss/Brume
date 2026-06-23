@@ -162,7 +162,7 @@ struct SoftButton: View {
                 Text(title)
                     .font(BrumeTheme.Fonts.heading(18))
             }
-            .foregroundStyle(filled ? Color.white : BrumeTheme.Colors.lavender)
+            .foregroundStyle(filled ? Color.white : BrumeTheme.Colors.clay)
             .padding(.horizontal, BrumeTheme.Spacing.lg)
             .padding(.vertical, 14)
             .frame(maxWidth: .infinity)
@@ -170,7 +170,7 @@ struct SoftButton: View {
                 Group {
                     if filled {
                         LinearGradient(
-                            colors: [BrumeTheme.Colors.lavender, BrumeTheme.Colors.lavenderLight],
+                            colors: [BrumeTheme.Colors.clay, BrumeTheme.Colors.clayLight],
                             startPoint: .topLeading,
                             endPoint: .bottomTrailing
                         )
@@ -182,9 +182,9 @@ struct SoftButton: View {
             .clipShape(RoundedRectangle(cornerRadius: BrumeTheme.Radius.pill, style: .continuous))
             .overlay(
                 RoundedRectangle(cornerRadius: BrumeTheme.Radius.pill, style: .continuous)
-                    .stroke(BrumeTheme.Colors.lavender.opacity(filled ? 0 : 0.6), lineWidth: 1.5)
+                    .stroke(BrumeTheme.Colors.clay.opacity(filled ? 0 : 0.6), lineWidth: 1.5)
             )
-            .shadow(color: filled ? BrumeTheme.Colors.lavender.opacity(0.3) : .clear, radius: 12, y: 4)
+            .shadow(color: filled ? BrumeTheme.Colors.clay.opacity(0.3) : .clear, radius: 12, y: 4)
         }
         .buttonStyle(.plain)
     }

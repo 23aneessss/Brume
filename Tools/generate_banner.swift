@@ -29,8 +29,8 @@ ctx.saveGState()
 ctx.addRect(CGRect(x: 0, y: 0, width: fw, height: fh))
 ctx.clip()
 let grad = CGGradient(colorsSpace: cs, colors: [
-    color(0.74, 0.66, 0.87),
-    color(0.88, 0.82, 0.91),
+    color(0.85, 0.62, 0.44),
+    color(0.93, 0.81, 0.67),
     color(0.96, 0.91, 0.83),
     color(0.72, 0.81, 0.73)
 ] as CFArray, locations: [0, 0.4, 0.7, 1])!

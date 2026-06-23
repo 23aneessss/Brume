@@ -70,7 +70,7 @@ struct EntryCard: View {
                 .fill(
                     LinearGradient(
                         colors: [
-                            (Mood.from(entry.mood)?.color ?? BrumeTheme.Colors.lavender).opacity(0.18),
+                            (Mood.from(entry.mood)?.color ?? BrumeTheme.Colors.clay).opacity(0.18),
                             (Mood.from(entry.mood)?.color ?? BrumeTheme.Colors.sage).opacity(0.08)
                         ],
                         startPoint: .topLeading, endPoint: .bottomTrailing
@@ -87,7 +87,7 @@ struct EntryCard: View {
             } else {
                 Image(systemName: "doc.text")
                     .font(.system(size: 22, weight: .light))
-                    .foregroundStyle(BrumeTheme.Colors.lavender.opacity(0.6))
+                    .foregroundStyle(BrumeTheme.Colors.clay.opacity(0.6))
             }
         }
     }

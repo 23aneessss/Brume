@@ -133,7 +133,7 @@ private struct CalmIllustration: View {
             MoonDoodle()
                 .fill(
                     LinearGradient(
-                        colors: [BrumeTheme.Colors.lavenderLight, accent],
+                        colors: [BrumeTheme.Colors.clayLight, accent],
                         startPoint: .topLeading, endPoint: .bottomTrailing
                     )
                 )
@@ -270,7 +270,7 @@ struct MoonDoodle: Shape {
 
 #Preview {
     VStack(spacing: 40) {
-        OnboardingIllustration(kind: .write, accent: BrumeTheme.Colors.lavender)
+        OnboardingIllustration(kind: .write, accent: BrumeTheme.Colors.clay)
         OnboardingIllustration(kind: .draw, accent: BrumeTheme.Colors.sage)
         OnboardingIllustration(kind: .calm, accent: BrumeTheme.Colors.softBrown)
     }

@@ -17,19 +17,19 @@ struct TextNodeView: View {
                 .focused($fieldFocused)
                 .font(.system(size: annotation.fontSize, weight: .regular, design: .serif))
                 .foregroundStyle(InkColor.from(hex: annotation.colorHex).color)
-                .tint(BrumeTheme.Colors.lavender)
+                .tint(BrumeTheme.Colors.clay)
                 .multilineTextAlignment(.leading)
                 .frame(width: annotation.width, alignment: .topLeading)
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(8)
                 .background(
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .fill(isFocused ? BrumeTheme.Colors.lavender.opacity(0.06) : .clear)
+                        .fill(isFocused ? BrumeTheme.Colors.clay.opacity(0.06) : .clear)
                 )
                 .overlay(
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
                         .stroke(
-                            isFocused ? BrumeTheme.Colors.lavender.opacity(0.5) : .clear,
+                            isFocused ? BrumeTheme.Colors.clay.opacity(0.5) : .clear,
                             style: StrokeStyle(lineWidth: 1.2, dash: [4, 3])
                         )
                 )

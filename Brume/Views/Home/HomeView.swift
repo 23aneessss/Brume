@@ -138,7 +138,7 @@ struct HomeView: View {
                 .foregroundStyle(BrumeTheme.Colors.inkLight)
             TextField("Search your thoughts…", text: $searchText)
                 .font(BrumeTheme.Fonts.body(16))
-                .tint(BrumeTheme.Colors.lavender)
+                .tint(BrumeTheme.Colors.clay)
         }
         .padding(.horizontal, BrumeTheme.Spacing.md)
         .padding(.vertical, 12)
@@ -181,7 +181,7 @@ struct HomeView: View {
     private var emptyState: some View {
         VStack(spacing: BrumeTheme.Spacing.lg) {
             Spacer()
-            OnboardingIllustration(kind: .write, accent: BrumeTheme.Colors.lavender)
+            OnboardingIllustration(kind: .write, accent: BrumeTheme.Colors.clay)
                 .frame(height: 180)
             VStack(spacing: BrumeTheme.Spacing.sm) {
                 Text(searchText.isEmpty ? "Your page awaits" : "Nothing found")
@@ -215,12 +215,12 @@ struct HomeView: View {
                 .frame(width: 64, height: 64)
                 .background(
                     LinearGradient(
-                        colors: [BrumeTheme.Colors.lavender, BrumeTheme.Colors.lavenderLight],
+                        colors: [BrumeTheme.Colors.clay, BrumeTheme.Colors.clayLight],
                         startPoint: .topLeading, endPoint: .bottomTrailing
                     )
                 )
                 .clipShape(Circle())
-                .shadow(color: BrumeTheme.Colors.lavender.opacity(0.4), radius: 16, y: 6)
+                .shadow(color: BrumeTheme.Colors.clay.opacity(0.4), radius: 16, y: 6)
         }
     }
 }

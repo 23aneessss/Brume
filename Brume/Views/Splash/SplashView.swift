@@ -12,7 +12,7 @@ struct SplashView: View {
             // Soft gradient backdrop
             LinearGradient(
                 colors: [
-                    BrumeTheme.Colors.lavenderLight.opacity(0.35),
+                    BrumeTheme.Colors.clayLight.opacity(0.35),
                     BrumeTheme.Colors.background,
                     BrumeTheme.Colors.sageLight.opacity(0.25)
                 ],
@@ -113,7 +113,7 @@ struct BrumeMarkView: View {
         BrumeMark(progress: progress)
             .stroke(
                 LinearGradient(
-                    colors: [BrumeTheme.Colors.lavender, BrumeTheme.Colors.sage],
+                    colors: [BrumeTheme.Colors.clay, BrumeTheme.Colors.sage],
                     startPoint: .top,
                     endPoint: .bottom
                 ),

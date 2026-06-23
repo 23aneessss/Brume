@@ -36,7 +36,7 @@ enum PenKind: String, CaseIterable, Identifiable {
 // Soothing palette for both ink and text.
 enum InkColor: String, CaseIterable, Identifiable {
     case ink
-    case lavender
+    case clay
     case sage
     case rose
     case sky
@@ -46,12 +46,12 @@ enum InkColor: String, CaseIterable, Identifiable {
 
     var hex: String {
         switch self {
-        case .ink:      return "#3D3530"
-        case .lavender: return "#9B8EC4"
-        case .sage:     return "#8BA888"
-        case .rose:     return "#C98BA8"
-        case .sky:      return "#7BAFD4"
-        case .amber:    return "#E0A458"
+        case .ink:   return "#3D3530"
+        case .clay:  return "#B97B4D"
+        case .sage:  return "#8BA888"
+        case .rose:  return "#C98BA8"
+        case .sky:   return "#7BAFD4"
+        case .amber: return "#E0A458"
         }
     }
 

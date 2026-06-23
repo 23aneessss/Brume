@@ -8,7 +8,7 @@ struct LockScreenView: View {
         ZStack {
             LinearGradient(
                 colors: [
-                    BrumeTheme.Colors.lavenderLight.opacity(0.4),
+                    BrumeTheme.Colors.clayLight.opacity(0.4),
                     BrumeTheme.Colors.background
                 ],
                 startPoint: .top, endPoint: .bottom
@@ -18,13 +18,13 @@ struct LockScreenView: View {
             VStack(spacing: BrumeTheme.Spacing.xl) {
                 ZStack {
                     Circle()
-                        .fill(BrumeTheme.Colors.lavender.opacity(0.15))
+                        .fill(BrumeTheme.Colors.clay.opacity(0.15))
                         .frame(width: 140, height: 140)
                         .scaleEffect(breathe ? 1.1 : 0.95)
 
                     Image(systemName: "lock.fill")
                         .font(.system(size: 44, weight: .light))
-                        .foregroundStyle(BrumeTheme.Colors.lavender)
+                        .foregroundStyle(BrumeTheme.Colors.clay)
                 }
 
                 VStack(spacing: BrumeTheme.Spacing.sm) {

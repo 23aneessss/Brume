@@ -123,7 +123,7 @@ struct CanvasEditorView: View {
 
             // Mode switcher
             HStack(spacing: 0) {
-                modeTab(.write, icon: "text.cursor", label: "Write")
+                modeTab(.write, icon: "pencil.line", label: "Write")
                 modeTab(.draw, icon: "scribble.variable", label: "Draw")
             }
             .padding(4)
@@ -157,7 +157,7 @@ struct CanvasEditorView: View {
             .padding(.horizontal, BrumeTheme.Spacing.lg)
             .padding(.vertical, 10)
             .background(
-                Capsule().fill(isSelected ? BrumeTheme.Colors.lavender : .clear)
+                Capsule().fill(isSelected ? BrumeTheme.Colors.clay : .clear)
             )
         }
     }
@@ -211,7 +211,7 @@ struct CanvasEditorView: View {
             } label: {
                 Image(systemName: "plus.circle.fill")
                     .font(.system(size: 26))
-                    .foregroundStyle(BrumeTheme.Colors.lavender)
+                    .foregroundStyle(BrumeTheme.Colors.clay)
             }
         }
         .padding(BrumeTheme.Spacing.md)

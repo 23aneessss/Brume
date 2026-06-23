@@ -3,26 +3,27 @@ import SwiftUI
 enum BrumeTheme {
     // MARK: - Colors
     struct Colors {
-        // Surfaces & text adapt between light/dark so the app stays legible in both.
-        static let background     = dyn(light: "#F7F3EC", dark: "#1B1D28")
-        static let surface        = dyn(light: "#FDF9F3", dark: "#262030")
-        static let warmBrown      = dyn(light: "#6B5B4E", dark: "#E6DCEF") // titles
-        static let softBrown      = dyn(light: "#A08070", dark: "#B6A6C9")
-        static let inkDark        = dyn(light: "#3D3530", dark: "#ECE8F2")
-        static let inkMedium      = dyn(light: "#6B5B4E", dark: "#C3BBD0")
-        static let inkLight       = dyn(light: "#9A8880", dark: "#8E869C")
-        static let paperLine      = dyn(light: "#E8DDD0", dark: "#39354A", lightAlpha: 0.6, darkAlpha: 0.7)
-        static let cardBorder     = dyn(light: "#E2D8CC", dark: "#3A3548")
+        // Surfaces & text adapt between light/dark. The night theme is a warm
+        // sepia (not indigo) so it sits beautifully with the terracotta accent.
+        static let background     = dyn(light: "#F7F3EC", dark: "#1E1A17")
+        static let surface        = dyn(light: "#FDF9F3", dark: "#29231E")
+        static let warmBrown      = dyn(light: "#6B5B4E", dark: "#EFE6D9") // titles
+        static let softBrown      = dyn(light: "#A08070", dark: "#C9B4A2")
+        static let inkDark        = dyn(light: "#3D3530", dark: "#F1EBE2")
+        static let inkMedium      = dyn(light: "#6B5B4E", dark: "#CBBEB0")
+        static let inkLight       = dyn(light: "#9A8880", dark: "#9C9082")
+        static let paperLine      = dyn(light: "#E8DDD0", dark: "#3A332C", lightAlpha: 0.6, darkAlpha: 0.7)
+        static let cardBorder     = dyn(light: "#E2D8CC", dark: "#3E362E")
 
-        // Brand accents — readable on both schemes, so kept constant.
-        static let lavender       = Color(hex: "#9B8EC4")
-        static let lavenderLight  = Color(hex: "#C8B8E8")
+        // Brand accents — warm terracotta + sage, readable on both schemes.
+        static let clay           = Color(hex: "#B97B4D")
+        static let clayLight      = Color(hex: "#D2A06F")
         static let sage           = Color(hex: "#8BA888")
         static let sageLight      = Color(hex: "#B5CEB3")
 
         // Mood colors
         static let moodHappy      = Color(hex: "#F4C542")
-        static let moodCalm       = Color(hex: "#9B8EC4")
+        static let moodCalm       = Color(hex: "#8DA3B5")
         static let moodSad        = Color(hex: "#7BAFD4")
         static let moodEnergetic  = Color(hex: "#E88B5A")
         static let moodGrateful   = Color(hex: "#8BA888")
@@ -39,20 +40,24 @@ enum BrumeTheme {
 
     // MARK: - Fonts
     struct Fonts {
+        // Handwriting (Noteworthy) reads small at nominal sizes, so every
+        // handwriting style is scaled up for comfortable legibility.
+        static let handwritingScale: CGFloat = 1.18
+
         static func title(_ size: CGFloat = 28) -> Font {
-            .custom("Noteworthy-Bold", size: size)
+            .custom("Noteworthy-Bold", size: size * handwritingScale)
         }
         static func heading(_ size: CGFloat = 20) -> Font {
-            .custom("Noteworthy-Light", size: size)
+            .custom("Noteworthy-Bold", size: size * handwritingScale)
         }
         static func label(_ size: CGFloat = 15) -> Font {
-            .custom("Noteworthy-Light", size: size)
+            .custom("Noteworthy-Bold", size: size * handwritingScale)
         }
         static func body(_ size: CGFloat = 16) -> Font {
-            .custom("Noteworthy-Light", size: size)
+            .custom("Noteworthy-Light", size: size * handwritingScale)
         }
         static func caption(_ size: CGFloat = 12) -> Font {
-            .custom("Noteworthy-Light", size: size)
+            .custom("Noteworthy-Light", size: size * handwritingScale)
         }
         // For main text entry (readability first)
         static func journalBody(_ size: CGFloat = 17) -> Font {
@@ -119,9 +124,6 @@ extension ShapeStyle where Self == Color {
     }
     static var brumeSurface: Color {
         Color("BrumeSurface")
-    }
-    static var brumeLavender: Color {
-        Color("BrumeLavender")
     }
     static var brumeInk: Color {
         Color("BrumeInk")

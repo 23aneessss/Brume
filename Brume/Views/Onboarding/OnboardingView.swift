@@ -9,7 +9,7 @@ struct OnboardingView: View {
             illustration: .write,
             title: "A quiet place to think",
             body: "Pour your thoughts onto the page. No rules, no pressure — just you and a soft, endless sheet of paper.",
-            accent: BrumeTheme.Colors.lavender
+            accent: BrumeTheme.Colors.clay
         ),
         OnboardingPage(
             illustration: .draw,
@@ -54,7 +54,7 @@ struct OnboardingView: View {
                 HStack(spacing: 10) {
                     ForEach(pages.indices, id: \.self) { i in
                         Capsule()
-                            .fill(i == page ? BrumeTheme.Colors.lavender : BrumeTheme.Colors.cardBorder)
+                            .fill(i == page ? BrumeTheme.Colors.clay : BrumeTheme.Colors.cardBorder)
                             .frame(width: i == page ? 26 : 9, height: 9)
                             .animation(.spring(response: 0.4, dampingFraction: 0.7), value: page)
                     }

@@ -39,11 +39,11 @@ struct CoachOverlay: View {
                     VStack(spacing: BrumeTheme.Spacing.md) {
                         ZStack {
                             Circle()
-                                .fill(BrumeTheme.Colors.lavender.opacity(0.15))
+                                .fill(BrumeTheme.Colors.clay.opacity(0.15))
                                 .frame(width: 64, height: 64)
                             Image(systemName: tips[step].icon)
                                 .font(.system(size: 28, weight: .light))
-                                .foregroundStyle(BrumeTheme.Colors.lavender)
+                                .foregroundStyle(BrumeTheme.Colors.clay)
                         }
 
                         Text(tips[step].title)
@@ -60,7 +60,7 @@ struct CoachOverlay: View {
                         HStack(spacing: 8) {
                             ForEach(tips.indices, id: \.self) { i in
                                 Circle()
-                                    .fill(i == step ? BrumeTheme.Colors.lavender : BrumeTheme.Colors.cardBorder)
+                                    .fill(i == step ? BrumeTheme.Colors.clay : BrumeTheme.Colors.cardBorder)
                                     .frame(width: 7, height: 7)
                             }
                         }

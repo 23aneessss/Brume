@@ -32,11 +32,11 @@ ctx.saveGState()
 ctx.addRect(full)
 ctx.clip()
 let bgGrad = CGGradient(colorsSpace: cs, colors: [
-    color(0.72, 0.64, 0.86),   // deeper lavender top
-    color(0.86, 0.80, 0.90),   // soft lilac
-    color(0.96, 0.90, 0.82),   // warm cream
+    color(0.85, 0.62, 0.44),   // terracotta top
+    color(0.93, 0.80, 0.66),   // warm clay
+    color(0.96, 0.91, 0.83),   // cream
     color(0.70, 0.80, 0.72)    // sage bottom
-] as CFArray, locations: [0, 0.38, 0.66, 1])!
+] as CFArray, locations: [0, 0.34, 0.64, 1])!
 ctx.drawLinearGradient(
     bgGrad,
     start: CGPoint(x: 0, y: W),

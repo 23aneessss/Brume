@@ -38,7 +38,7 @@ struct SettingsView: View {
                 }
             }
         }
-        .tint(BrumeTheme.Colors.lavender)
+        .tint(BrumeTheme.Colors.clay)
     }
 
     // MARK: - Appearance
@@ -154,7 +154,7 @@ struct SettingsView: View {
 
                 Text("breathe · write · draw")
                     .font(BrumeTheme.Fonts.label(15))
-                    .foregroundStyle(BrumeTheme.Colors.lavender)
+                    .foregroundStyle(BrumeTheme.Colors.clay)
                     .frame(maxWidth: .infinity)
                     .padding(.top, 4)
             }
@@ -190,7 +190,7 @@ struct SettingsCard<Content: View>: View {
             HStack(spacing: 8) {
                 Image(systemName: icon)
                     .font(.system(size: 15, weight: .medium))
-                    .foregroundStyle(BrumeTheme.Colors.lavender)
+                    .foregroundStyle(BrumeTheme.Colors.clay)
                 Text(title)
                     .font(BrumeTheme.Fonts.heading(18))
                     .foregroundStyle(BrumeTheme.Colors.warmBrown)
