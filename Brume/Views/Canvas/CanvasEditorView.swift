@@ -8,7 +8,15 @@ struct CanvasEditorView: View {
 
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
+    @Environment(\.colorScheme) private var systemScheme
     @AppStorage("hasSeenCanvasCoach") private var hasSeenCoach = false
+
+    // A full-screen cover doesn't reliably inherit the app's forced theme into
+    // SwiftUI's colorScheme, so derive the effective scheme from settings (and
+    // fall back to the system scheme only when the user picked "System").
+    private var effectiveScheme: ColorScheme {
+        AppSettings.shared.preferredColorScheme ?? systemScheme
+    }
 
     @State private var tool = CanvasToolState()
     @State private var drawing = PKDrawing()
@@ -57,12 +65,15 @@ struct CanvasEditorView: View {
 
     // MARK: - Canvas + text layers
     private var canvasStack: some View {
-        ZStack {
+        // Top-leading alignment so a text note's top-left sits exactly where
+        // the user tapped (its offset is measured from the canvas corner).
+        ZStack(alignment: .topLeading) {
             // Drawing layer (interactive only in draw mode)
             PencilCanvasView(
                 drawing: $drawing,
-                tool: tool.pkTool,
-                isDrawingEnabled: tool.mode == .draw
+                tool: tool.pkTool(for: effectiveScheme),
+                isDrawingEnabled: tool.mode == .draw,
+                interfaceStyle: effectiveScheme == .dark ? .dark : .light
             )
 
             // Empty-space tap catcher (write mode only)
@@ -329,14 +340,21 @@ struct CanvasEditorView: View {
     }
 
     private func addNode(at location: CGPoint) {
+        // Notes anchor by their top-left corner, so clamp the start point to
+        // keep the whole box on-screen (and clear of the top toolbar).
+        let screenW = UIScreen.main.bounds.width
+        let width = min(300, screenW - 48)
+        let x = min(max(16, location.x), screenW - width - 16)
+        let y = max(72, location.y)
+
         var node = TextAnnotation(
             text: "",
-            x: location.x,
-            y: location.y,
+            x: x,
+            y: y,
             fontSize: 18,
             colorHex: tool.color.hex
         )
-        node.width = min(300, UIScreen.main.bounds.width - 60)
+        node.width = width
         annotations.append(node)
         focusedNodeID = node.id
         persist()

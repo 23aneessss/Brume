@@ -57,7 +57,7 @@
 		C31698209728061B6DCEC57D /* PencilCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilCanvasView.swift; sourceTree = "<group>"; };
 		CCC3435056B3D295A2E1A673 /* HandDrawn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandDrawn.swift; sourceTree = "<group>"; };
 		CD91645F069184D53ED639BF /* BrumeTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrumeTheme.swift; sourceTree = "<group>"; };
-		D02E0700BF67BAD55AE7AB50 /* Brume.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Brume.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D02E0700BF67BAD55AE7AB50 /* Brume.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brume.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7AB4DD12D8178E84B351162 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		F1DE5C7331D60EC4E57218EA /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		F26A88CEBB23F3954D84E3C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -233,8 +233,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1600;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 75EAD57380B474778F7040D5 /* Build configuration list for PBXProject "Brume" */;
 			developmentRegion = en;
@@ -308,6 +306,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Brume/Brume.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = PBFNCNVLAL;
 				INFOPLIST_FILE = Brume/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -395,6 +394,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Brume/Brume.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = PBFNCNVLAL;
 				INFOPLIST_FILE = Brume/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -64,6 +64,17 @@ enum InkColor: String, CaseIterable, Identifiable {
     static func from(hex: String) -> InkColor {
         allCases.first { $0.hex.lowercased() == hex.lowercased() } ?? .ink
     }
+
+    /// Concrete UIColor for PencilKit. The neutral "ink" flips to a light cream
+    /// in dark mode so strokes are visible on dark paper; accents are constant.
+    /// (Resolved from hex directly — round-tripping a dynamic SwiftUI Color
+    /// through UIColor flattens it to one appearance.)
+    func uiColor(for scheme: ColorScheme) -> UIColor {
+        switch self {
+        case .ink: return UIColor(Color(hex: scheme == .dark ? "#F1EBE2" : "#3D3530"))
+        default:   return UIColor(Color(hex: hex))
+        }
+    }
 }
 
 struct CanvasToolState {
@@ -72,8 +83,11 @@ struct CanvasToolState {
     var color: InkColor = .ink
     var lineWidth: CGFloat = 5
 
-    var pkTool: PKTool {
-        let uiColor = UIColor(color.color)
+    /// Builds the PencilKit tool, resolving the (possibly adaptive) ink colour
+    /// against the active appearance so e.g. the neutral "ink" draws light in
+    /// dark mode instead of baking in the light-mode brown.
+    func pkTool(for scheme: ColorScheme) -> PKTool {
+        let uiColor = color.uiColor(for: scheme)
         switch pen {
         case .pen:
             return PKInkingTool(.pen, color: uiColor, width: lineWidth)

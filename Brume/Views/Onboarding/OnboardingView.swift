@@ -99,10 +99,11 @@ struct OnboardingPageView: View {
 
     var body: some View {
         VStack(spacing: BrumeTheme.Spacing.xl) {
-            Spacer()
+            Spacer(minLength: BrumeTheme.Spacing.md)
 
             OnboardingIllustration(kind: page.illustration, accent: page.accent)
                 .frame(height: 240)
+                .frame(maxWidth: .infinity)
                 .scaleEffect(appear ? 1 : 0.85)
                 .opacity(appear ? 1 : 0)
 
@@ -125,8 +126,7 @@ struct OnboardingPageView: View {
             .opacity(appear ? 1 : 0)
             .offset(y: appear ? 0 : 14)
 
-            Spacer()
-            Spacer()
+            Spacer(minLength: BrumeTheme.Spacing.md)
         }
         .padding(BrumeTheme.Spacing.lg)
         .onAppear {

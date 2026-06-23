@@ -39,6 +39,9 @@ struct SettingsView: View {
             }
         }
         .tint(BrumeTheme.Colors.clay)
+        // A presented sheet is its own context, so it needs the theme applied
+        // here too — otherwise it keeps the old appearance until reopened.
+        .preferredColorScheme(settings.preferredColorScheme)
     }
 
     // MARK: - Appearance
