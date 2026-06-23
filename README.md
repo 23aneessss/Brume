@@ -14,11 +14,11 @@
 
 <br/>
 
-![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20iPadOS-9B8EC4?style=flat-square)
+![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20iPadOS-B97B4D?style=flat-square)
 ![iOS](https://img.shields.io/badge/iOS-17.0%2B-8BA888?style=flat-square)
 ![Swift](https://img.shields.io/badge/Swift-5.9-E0A458?style=flat-square)
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-SwiftData-C98BA8?style=flat-square)
-![License](https://img.shields.io/badge/license-MIT-9B8EC4?style=flat-square)
+![License](https://img.shields.io/badge/license-MIT-B97B4D?style=flat-square)
 
 </div>
 
@@ -30,7 +30,7 @@ Brume is a journaling app built around one simple feeling: **the relief of letti
 
 Some days you want to write. Some days you just want to doodle a little cloud in the margin. Brume doesn't make you choose — you can do both, anywhere on the page, on the same soft sheet of paper. Tap to write a thought, switch to draw and sketch over it, set a gentle mood, and let it go.
 
-Everything is wrapped in a warm, hand-drawn aesthetic with colours chosen to soften the mind — misty lavender, sage, and cream — so the app itself feels like a deep breath.
+Everything is wrapped in a warm, hand-drawn aesthetic with colours chosen to soften the mind — warm terracotta, sage, and cream — so the app itself feels like a deep breath.
 
 > Brume keeps **everything on your device.** Nothing is ever uploaded. Your journal is yours alone.
 
@@ -40,9 +40,9 @@ Everything is wrapped in a warm, hand-drawn aesthetic with colours chosen to sof
 
 <div align="center">
 
-| Splash | Onboarding | Journal | The Page |
+| Onboarding | The Page | Journal · Day | Journal · Night |
 |:---:|:---:|:---:|:---:|
-| <img src="Docs/screenshots/splash.png" width="200"/> | <img src="Docs/screenshots/onboarding2.png" width="200"/> | <img src="Docs/screenshots/home.png" width="200"/> | <img src="Docs/screenshots/canvas.png" width="200"/> |
+| <img src="Docs/screenshots/onboarding2.png" width="200"/> | <img src="Docs/screenshots/canvas.png" width="200"/> | <img src="Docs/screenshots/home.png" width="200"/> | <img src="Docs/screenshots/home_dark.png" width="200"/> |
 
 </div>
 
@@ -54,7 +54,7 @@ Everything is wrapped in a warm, hand-drawn aesthetic with colours chosen to sof
 Tap anywhere in Write mode to drop a note, then flip to Draw mode and your finger or Apple Pencil becomes a pen. Move notes around freely. There are no boxes, no rules — just your page.
 
 🎨 **A palette that soothes**
-Six soft inks (ink, lavender, sage, rose, sky, amber) for both writing and drawing. Pen, pencil, marker, and eraser tools, all in a quiet hand-drawn toolbar.
+Six soft inks (ink, clay, sage, rose, sky, amber) for both writing and drawing. Pen, pencil, marker, and eraser tools, all in a quiet hand-drawn toolbar.
 
 🌫️ **A hand-drawn soul**
 Sketchy borders, lined and dotted paper textures, handwriting typography (Noteworthy), and illustrations drawn entirely in code — nothing about Brume looks "coded."
@@ -83,7 +83,7 @@ A splash screen, a three-step onboarding, and an in-canvas coach that shows you 
 
 Brume is built on the idea that a wellness app should *feel* well.
 
-- **Colours that calm.** The palette leans on lavender, sage and warm cream — tones associated with rest and reduced stress — instead of high-contrast, attention-grabbing UI.
+- **Colours that calm.** The palette leans on warm terracotta, sage and cream — earthy, grounding tones — instead of high-contrast, attention-grabbing UI.
 - **Imperfect on purpose.** Card borders are drawn with a tiny, deterministic jitter so they look sketched by hand rather than rendered by a machine.
 - **Readable where it matters.** Handwriting fonts give the app its character on titles and labels, while journal text itself is set in a calm serif for comfortable reading.
 - **No pressure mechanics.** No streaks, no badges, no guilt. Reminders are soft and optional.

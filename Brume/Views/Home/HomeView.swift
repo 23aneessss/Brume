@@ -87,6 +87,15 @@ struct HomeView: View {
         } message: {
             Text("This page and its drawing will be gone for good.")
         }
+        .onAppear(perform: sweepEmptyEntries)
+    }
+
+    /// Removes any fully-empty entries that may have been orphaned (e.g. the app
+    /// was killed before an untouched new page could be cleaned up on dismiss).
+    private func sweepEmptyEntries() {
+        for entry in entries where entry.isEmpty {
+            context.delete(entry)
+        }
     }
 
     // MARK: - Header

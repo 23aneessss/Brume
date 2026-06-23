@@ -14,7 +14,7 @@ The first release of Brume. 🌫️
   mode to drop a draggable text note; switch to Draw mode to sketch with finger
   or Apple Pencil over your words.
 - **Drawing tools** — pen, pencil, marker, and eraser, with a six-colour soothing
-  palette (ink, lavender, sage, rose, sky, amber) shared between text and ink.
+  palette (ink, clay, sage, rose, sky, amber) shared between text and ink.
 - **Moods** — tag each entry with one of five gentle moods (Happy, Calm, Tender,
   Alive, Grateful).
 - **Journal home** — chronological list with text previews, mood, and a live

@@ -27,7 +27,7 @@ func color(_ r: Double, _ g: Double, _ b: Double, _ a: Double = 1) -> CGColor {
 let W = CGFloat(S)
 let full = CGRect(x: 0, y: 0, width: W, height: W)
 
-// MARK: - Soft dreamy gradient background (lavender → cream → sage)
+// MARK: - Soft dreamy gradient background (terracotta → cream → sage)
 ctx.saveGState()
 ctx.addRect(full)
 ctx.clip()
