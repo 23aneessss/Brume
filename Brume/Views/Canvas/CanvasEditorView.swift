@@ -19,6 +19,10 @@ struct CanvasEditorView: View {
     @State private var showShareSheet = false
     @State private var exportURL: URL?
     @State private var didLoad = false
+    @State private var contentOffset: CGPoint = .zero
+
+    // A tall, scrollable page so notes aren't cramped to one screen.
+    private let pageHeight: CGFloat = max(UIScreen.main.bounds.height * 2.5, 1600)
 
     var body: some View {
         ZStack {
@@ -60,36 +64,38 @@ struct CanvasEditorView: View {
         // Top-leading alignment so a text note's top-left sits exactly where
         // the user tapped (its offset is measured from the canvas corner).
         ZStack(alignment: .topLeading) {
-            // Drawing layer (interactive only in draw mode)
+            // Scrollable drawing page. Tapping (in write mode) reports a
+            // content-space point used to drop a note.
             PencilCanvasView(
                 drawing: $drawing,
+                contentOffset: $contentOffset,
                 tool: tool.pkTool(for: AppSettings.shared.effectiveInterfaceStyle),
-                isDrawingEnabled: tool.mode == .draw,
-                interfaceStyle: AppSettings.shared.effectiveInterfaceStyle
+                mode: tool.mode,
+                pageHeight: pageHeight,
+                interfaceStyle: AppSettings.shared.effectiveInterfaceStyle,
+                onTap: { handleCanvasTap(at: $0) }
             )
 
-            // Empty-space tap catcher (write mode only)
-            if tool.mode == .write {
-                Color.clear
-                    .contentShape(Rectangle())
-                    .onTapGesture(coordinateSpace: .local) { location in
-                        handleCanvasTap(at: location)
-                    }
+            // Text notes live in content coordinates and ride the scroll offset
+            // so they move in lock-step with the drawing underneath.
+            ZStack(alignment: .topLeading) {
+                ForEach($annotations) { $annotation in
+                    TextNodeView(
+                        annotation: $annotation,
+                        isInteractive: tool.mode == .write,
+                        isFocused: focusedNodeID == annotation.id,
+                        onTapToFocus: { focusedNodeID = annotation.id },
+                        onDelete: { deleteNode(annotation) },
+                        onCommit: { persist() }
+                    )
+                }
             }
-
-            // Text nodes
-            ForEach($annotations) { $annotation in
-                TextNodeView(
-                    annotation: $annotation,
-                    isInteractive: tool.mode == .write,
-                    isFocused: focusedNodeID == annotation.id,
-                    onTapToFocus: { focusedNodeID = annotation.id },
-                    onDelete: { deleteNode(annotation) },
-                    onCommit: { persist() }
-                )
-                .allowsHitTesting(tool.mode == .write)
-            }
+            .offset(x: -contentOffset.x, y: -contentOffset.y)
+            // Non-interactive while drawing so strokes and two-finger scrolling
+            // pass straight through to the canvas.
+            .allowsHitTesting(tool.mode == .write)
         }
+        .clipped()
     }
 
     // MARK: - Top bar

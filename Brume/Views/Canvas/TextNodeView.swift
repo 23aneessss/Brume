@@ -81,11 +81,12 @@ struct TextNodeView: View {
     // MARK: - Move handle (drag to reposition the note)
     private var moveHandle: some View {
         Image(systemName: "arrow.up.and.down.and.arrow.left.and.right")
-            .font(.system(size: 11, weight: .bold))
+            .font(.system(size: 15, weight: .bold))
             .foregroundStyle(.white)
-            .frame(width: 30, height: 30)
+            .frame(width: 40, height: 40)
             .background(Circle().fill(BrumeTheme.Colors.clay))
-            .shadow(color: .black.opacity(0.15), radius: 3, y: 1)
+            .overlay(Circle().stroke(Color.white.opacity(0.7), lineWidth: 1.5))
+            .shadow(color: .black.opacity(0.2), radius: 4, y: 2)
             .contentShape(Circle())
             .gesture(
                 DragGesture(minimumDistance: 0)
