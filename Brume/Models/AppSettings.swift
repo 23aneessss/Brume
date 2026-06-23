@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import UIKit
 
 final class AppSettings: ObservableObject {
     static let shared = AppSettings()
@@ -16,6 +17,17 @@ final class AppSettings: ObservableObject {
         case "light": return .light
         case "dark":  return .dark
         default:      return nil
+        }
+    }
+
+    /// The app's effective appearance as a UIKit style. Reliable inside a
+    /// full-screen cover (which doesn't inherit the forced colour scheme):
+    /// honour an explicit choice, otherwise read the real system appearance.
+    var effectiveInterfaceStyle: UIUserInterfaceStyle {
+        switch colorSchemePreference {
+        case "light": return .light
+        case "dark":  return .dark
+        default:      return UIScreen.main.traitCollection.userInterfaceStyle
         }
     }
 

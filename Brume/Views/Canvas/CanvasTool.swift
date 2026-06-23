@@ -65,14 +65,21 @@ enum InkColor: String, CaseIterable, Identifiable {
         allCases.first { $0.hex.lowercased() == hex.lowercased() } ?? .ink
     }
 
-    /// Concrete UIColor for PencilKit. The neutral "ink" flips to a light cream
-    /// in dark mode so strokes are visible on dark paper; accents are constant.
-    /// (Resolved from hex directly — round-tripping a dynamic SwiftUI Color
-    /// through UIColor flattens it to one appearance.)
-    func uiColor(for scheme: ColorScheme) -> UIColor {
+    /// A genuinely dynamic UIColor for PencilKit. The neutral "ink" flips to a
+    /// light cream in dark mode so strokes stay visible on dark paper; accents
+    /// are constant. Built with the UIColor trait closure (NOT by converting a
+    /// SwiftUI Color, which flattens to a single appearance) so the canvas
+    /// resolves it against its own — correct — interface style.
+    var dynamicUIColor: UIColor {
         switch self {
-        case .ink: return UIColor(Color(hex: scheme == .dark ? "#F1EBE2" : "#3D3530"))
-        default:   return UIColor(Color(hex: hex))
+        case .ink:
+            return UIColor { traits in
+                traits.userInterfaceStyle == .dark
+                    ? UIColor(red: 0.945, green: 0.922, blue: 0.886, alpha: 1)  // #F1EBE2
+                    : UIColor(red: 0.239, green: 0.208, blue: 0.188, alpha: 1)  // #3D3530
+            }
+        default:
+            return UIColor(Color(hex: hex))
         }
     }
 }
@@ -83,11 +90,12 @@ struct CanvasToolState {
     var color: InkColor = .ink
     var lineWidth: CGFloat = 5
 
-    /// Builds the PencilKit tool, resolving the (possibly adaptive) ink colour
-    /// against the active appearance so e.g. the neutral "ink" draws light in
-    /// dark mode instead of baking in the light-mode brown.
-    func pkTool(for scheme: ColorScheme) -> PKTool {
-        let uiColor = color.uiColor(for: scheme)
+    /// Builds the PencilKit tool, resolving the ink colour against an explicit
+    /// interface style (the canvas is forced to the same style) so light "ink"
+    /// draws as cream in dark mode instead of the baked-in light-mode brown.
+    func pkTool(for style: UIUserInterfaceStyle) -> PKTool {
+        let traits = UITraitCollection(userInterfaceStyle: style)
+        let uiColor = color.dynamicUIColor.resolvedColor(with: traits)
         switch pen {
         case .pen:
             return PKInkingTool(.pen, color: uiColor, width: lineWidth)

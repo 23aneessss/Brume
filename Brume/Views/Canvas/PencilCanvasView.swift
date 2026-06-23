@@ -8,13 +8,13 @@ struct PencilCanvasView: UIViewRepresentable {
     @Binding var drawing: PKDrawing
     var tool: PKTool
     var isDrawingEnabled: Bool
-    /// Forced explicitly: a full-screen cover doesn't reliably inherit the
-    /// app's appearance, and PencilKit adapts ink colours to the canvas's own
-    /// trait — so without this, a light "ink" stroke renders dark in dark mode.
+    /// Forced so the canvas's own trait matches the app appearance — otherwise a
+    /// full-screen cover can leave the canvas light while the app is dark.
     var interfaceStyle: UIUserInterfaceStyle
 
     func makeUIView(context: Context) -> PKCanvasView {
         let canvas = PKCanvasView()
+        canvas.overrideUserInterfaceStyle = interfaceStyle
         canvas.drawing = drawing
         canvas.tool = tool
         canvas.backgroundColor = .clear
@@ -24,17 +24,16 @@ struct PencilCanvasView: UIViewRepresentable {
         canvas.drawingPolicy = .anyInput          // finger + Apple Pencil
         canvas.delegate = context.coordinator
         canvas.isUserInteractionEnabled = isDrawingEnabled
-        canvas.overrideUserInterfaceStyle = interfaceStyle
         return canvas
     }
 
     func updateUIView(_ canvas: PKCanvasView, context: Context) {
+        canvas.overrideUserInterfaceStyle = interfaceStyle
         if canvas.drawing != drawing {
             canvas.drawing = drawing
         }
         canvas.tool = tool
         canvas.isUserInteractionEnabled = isDrawingEnabled
-        canvas.overrideUserInterfaceStyle = interfaceStyle
     }
 
     func makeCoordinator() -> Coordinator {

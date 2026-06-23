@@ -8,15 +8,7 @@ struct CanvasEditorView: View {
 
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
-    @Environment(\.colorScheme) private var systemScheme
     @AppStorage("hasSeenCanvasCoach") private var hasSeenCoach = false
-
-    // A full-screen cover doesn't reliably inherit the app's forced theme into
-    // SwiftUI's colorScheme, so derive the effective scheme from settings (and
-    // fall back to the system scheme only when the user picked "System").
-    private var effectiveScheme: ColorScheme {
-        AppSettings.shared.preferredColorScheme ?? systemScheme
-    }
 
     @State private var tool = CanvasToolState()
     @State private var drawing = PKDrawing()
@@ -71,9 +63,9 @@ struct CanvasEditorView: View {
             // Drawing layer (interactive only in draw mode)
             PencilCanvasView(
                 drawing: $drawing,
-                tool: tool.pkTool(for: effectiveScheme),
+                tool: tool.pkTool(for: AppSettings.shared.effectiveInterfaceStyle),
                 isDrawingEnabled: tool.mode == .draw,
-                interfaceStyle: effectiveScheme == .dark ? .dark : .light
+                interfaceStyle: AppSettings.shared.effectiveInterfaceStyle
             )
 
             // Empty-space tap catcher (write mode only)
