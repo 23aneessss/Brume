@@ -32,6 +32,7 @@ The first release of Brume. 🌫️
 - **Hand-drawn design system** — sketchy borders, lined/dotted paper, handwriting
   typography, and a code-generated app icon and banner (no image assets).
 
+
 ### Notes
 - 100% native Apple frameworks (SwiftUI, SwiftData, PencilKit, PDFKit,
   LocalAuthentication, UserNotifications). No third-party dependencies.
