@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 The first release of Brume. 🌫️
 
+
 ### Added
 - **Unified canvas** — write and draw on the same page. Tap anywhere in Write
   mode to drop a draggable text note; switch to Draw mode to sketch with finger
